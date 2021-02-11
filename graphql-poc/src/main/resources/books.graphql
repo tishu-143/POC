@@ -1,18 +1,19 @@
 schema{
 	query: Query
+	mutation: Mutation
 }
 
 type Query{
 	allBooks: [Book]
-	book(id: String): Book
+	book(id: Int): Book
 }
 type Mutation{
-    createBook(title: String, publisher: String, authors: [String], publishedDate: String)
+    createBook(title: String!, publisher: String!, authors: String!, publishedDate: String!): Book
 }
 type Book{
-	isn: String
+	isn: Int
 	title: String
 	publisher: String
-	authors: [String]
+	authors: String
 	publishedDate: String
 }

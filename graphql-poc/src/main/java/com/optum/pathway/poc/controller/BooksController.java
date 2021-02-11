@@ -19,9 +19,6 @@ public class BooksController {
 	@PostMapping("/getAllBooks")
 	public ResponseEntity<Object> getAllBooks(@RequestBody String query) {
 		ExecutionResult executionResult = graphQLService.getGraphQL().execute(query);
-		System.out.println("Get DATA = "+executionResult.getData().toString());
-		System.out.println("TO Specification = "+executionResult.toSpecification());
-		System.out.println("Get Extensions = "+executionResult.getExtensions());
 		return new ResponseEntity<>(executionResult, HttpStatus.OK);
 	}
 }
