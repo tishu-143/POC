@@ -20,7 +20,7 @@ public class BookDataFetcher implements DataFetcher<Optional<Book>> {
 	@Override
 	public Optional<Book> get(DataFetchingEnvironment environment) {
 		// TODO Auto-generated method stub
-		String isn = environment.getArgument("id");
+		int isn = environment.getArgument("id");
 		return bookRepository.findById(isn);
 	}
 
